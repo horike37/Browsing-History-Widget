@@ -71,7 +71,7 @@ function form( $instance ) {
 	jQuery(document).ready(function($){ 
 		var cookie_array = [];
 		if($.cookie(COOKIE_NAME)){
-			cookie_array = $.cookie(COOKIE_NAME).split("__HANRYU__");
+			cookie_array = $.cookie(COOKIE_NAME).split("__BROWSING_HIS__");
 			cookie_array.reverse();
 			$.each(cookie_array, function(i, data){
 				data = data.split("__URL__TITLE__");
@@ -110,7 +110,7 @@ if ( !is_single() || get_post_type() != 'post' )
 
 		var page_array = [];
 		if($.cookie(COOKIE_NAME)){
-			page_array = $.cookie(COOKIE_NAME).split("__HANRYU__");
+			page_array = $.cookie(COOKIE_NAME).split("__BROWSING_HIS__");
 		}
 
 		var url = '<?php the_permalink(); ?>';
@@ -128,7 +128,7 @@ if ( !is_single() || get_post_type() != 'post' )
 		var date = new Date();
 		date.setTime(date.getTime() + ( 1000 * 60 * 60 * 24 * 7 ));
 
-		$.cookie(COOKIE_NAME, page_array.join("__HANRYU__"), { path: '/', expires: date });
+		$.cookie(COOKIE_NAME, page_array.join("__BROWSING_HIS__"), { path: '/', expires: date });
 
 	});
 </script>
